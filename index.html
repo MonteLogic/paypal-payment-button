@@ -1,0 +1,49 @@
+    
+    <p id="demo"></p>
+    <input type="button" value="Close Window" onclick="newWindowObj.close()" />
+    <input type="button" value="Move Window" onclick="move()" />
+    <a href="http://carnes.cc" target="newWindow">My website.</a>
+    <br/>
+    <p>
+        I want the website to open to a new file and the file says press this button to ping the PayPal api.
+    </p>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script src="https://www.paypal.com/sdk/js?client-id=AXRvm3FfvjWucQsPUn5NAimcsI5WCCvyQwhQ55A9_-oCFw-KCm1VctIhss7EjgDp9aDsctJKTC0FDENK&components=buttons"></script> 
+
+    <script>
+        /* Window Object: size, open, close, move */
+        // Constant URL value for JAAS API
+    
+        
+        window.addEventListener('resize', update);
+        var x = window.document.getElementById("demo");
+        update();
+        
+        function update() {
+          x.innerHTML = "Browser inner window width: " + 
+            window.innerWidth + ", height: " + window.innerHeight + ".";
+        }
+        
+        var newWindowObj = window.open("https://freecodecamp.com", "newWindow", "menubar=true,location=true,resizable=false,scrollbars=false,width=400,height=300,top=200,left=200");
+        
+        function move() {
+          newWindowObj.moveBy(50,0);
+          newWindowObj.focus();
+        }
+        
+        
+        </script>
+            
+    
+    
+    
+    
+    <style>
+    body {
+      font-size: 20px;
+      background: Gainsboro;
+    }
+    
+    </style>
